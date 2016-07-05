@@ -1,0 +1,28 @@
+<%#
+# Enum Form Partial
+
+This partial renders an input element for enum attributes.
+By default, the input is a select field for the enum attributes.
+
+## Local variables:
+
+- `f`:
+  A Rails form generator, used to help create the appropriate input fields.
+- `field`:
+  An instance of [Administrate::Field::Enum][1].
+  A wrapper around the enum attributes pulled from the model.
+
+%>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.select(
+  field.attribute,
+  options_for_select(
+  f.object.class.public_send(field.attribute.to_s.pluralize)
+  .map { |k, v| [k.humanize, k] },
+  f.object.public_send(field.attribute.to_s)),
+  include_blank: false) %>
+</div>
