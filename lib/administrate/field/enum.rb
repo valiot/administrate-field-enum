@@ -7,7 +7,7 @@ module Administrate
       VERSION = '0.0.2'
 
       def to_s
-        data.humanize
+        data.humanize unless data.nil?
       end
 
       class Engine < ::Rails::Engine
