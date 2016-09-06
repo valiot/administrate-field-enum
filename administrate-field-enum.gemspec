@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version = Administrate::Field::Enum::VERSION
   s.authors = ['Balbina Santana']
   s.email = ['balbina@disruptiveangels.com']
-  s.homepage = 'https://github.com/DisruptiveAngels/administrate_field_enum'
+  s.homepage = 'https://github.com/DisruptiveAngels/administrate-field-enum'
   s.summary = 'Enum field plugin for Administrate'
   s.description = s.summary
   s.license = 'MIT'
