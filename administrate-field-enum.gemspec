@@ -1,10 +1,8 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'administrate/field/enum'
-
 Gem::Specification.new do |s|
   s.name = 'administrate-field-enum'
-  s.version = Administrate::Field::Enum::VERSION
+  s.version = '0.0.2'
   s.authors = ['Balbina Santana']
   s.email = ['balbina@disruptiveangels.com']
   s.homepage = 'https://github.com/DisruptiveAngels/administrate-field-enum'

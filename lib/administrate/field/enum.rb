@@ -4,8 +4,6 @@ require 'rails'
 module Administrate
   module Field
     class Enum < Administrate::Field::Base
-      VERSION = '0.0.2'
-
       def to_s
         data.humanize unless data.nil?
       end
