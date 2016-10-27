@@ -25,13 +25,6 @@ ATTRIBUTE_TYPES = {
 }
 ```
 
-By default all `Enum` options are false, you can set them to true like this:
-```ruby
-ATTRIBUTE_TYPES = {
-  images_files: Field::Enum.with_options(direct: true, presigned: true, multiple: true)
-}
-```
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/DisruptiveAngels/administrate-field-enum.
