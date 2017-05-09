@@ -8,7 +8,7 @@ describe Administrate::Field::Enum do
 
       path = field.to_partial_path
 
-      expect(path).to eq('/fields/enum/#{page}')
+      expect(path).to eq("/fields/enum/#{page}")
     end
   end
 end
