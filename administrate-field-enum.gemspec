@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'administrate-field-enum'
-  s.version = '0.0.3'
+  s.version = '0.0.4'
   s.authors = ['Balbina Santana', 'Adrian Rangel']
   s.email = ['adrian@disruptiveangels.com']
   s.homepage = 'https://github.com/DisruptiveAngels/administrate-field-enum'
