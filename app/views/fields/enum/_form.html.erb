@@ -18,11 +18,13 @@ By default, the input is a select field for the enum attributes.
   <%= f.label field.attribute %>
 </div>
 <div class="field-unit__field">
+  <%- attr_name = field.attribute.to_s %>
+
   <%= f.select(
   field.attribute,
   options_for_select(
-  f.object.class.public_send(field.attribute.to_s.pluralize)
+  f.object.class.public_send(attr_name.pluralize)
   .map { |k, v| [k.humanize, k] },
-  f.object.public_send(field.attribute.to_s)),
-  include_blank: false) %>
+  f.object.public_send(attr_name)),
+  include_blank: !f.object.class.validators_on(attr_name).map(&:class).include?(ActiveRecord::Validations::PresenceValidator)) %>
 </div>
