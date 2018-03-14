@@ -21,8 +21,10 @@ By default, the input is a select field for the enum attributes.
   <%= f.select(
   field.attribute,
   options_for_select(
-  f.object.class.public_send(field.attribute.to_s.pluralize)
-  .map { |k, v| [k.humanize, k] },
-  f.object.public_send(field.attribute.to_s)),
+    f.object.class.public_send(field.attribute.to_s.pluralize).map do |k, v|
+      [I18n.t("activerecord.attributes.#{f.object.class.name.underscore}.#{field.attribute.to_s.pluralize}.#{k}"), k]
+    end,
+    f.object.public_send(field.attribute.to_s)
+  ),
   include_blank: false) %>
 </div>
