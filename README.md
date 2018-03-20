@@ -31,5 +31,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Disrup
 
 ## License
 
-[MIT License](https://github.com/DisruptiveAngels/administrate-field-enum/blob/better_readme/LICENSE.md)
+[MIT License](https://github.com/DisruptiveAngels/administrate-field-enum/blob/master/LICENSE.md)
 
