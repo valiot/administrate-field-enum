@@ -1,33 +1,35 @@
-# Administrate::Field::Enum
+## AdministrateFieldEnum
+[![Gem](https://img.shields.io/gem/v/administrate-field-enum.svg)]()
 
 A plugin to show enum attributes in [Administrate].
 
-This repository is the first field plugin extracted out of Administrate.
-Although its structure may change,
-it's designed to act as a template for other Administrate field plugins.
+## Installation
 
-## FAQs
+Add this line to your application's Gemfile:
 
-**Q: How should I name my gem?**
+```ruby
+gem 'administrate-field-enum'
+```
 
-A: Administrate field gems must be named according to the [Rubygems naming guidelines].
+And then execute:
+```
+$ bundle install
+```
 
-Essentially, name your gem after the field class that it defines.
-If there's a namespace in the class name, that gets translated to a dash (`-`) in the gem name.
-If the class name is CamelCased, that translates to an underscore (`_`) in the gem name.
+## Usage
 
-Since all administrate field gems are under the namespace `Administrate::Field`,
-every field gem name should start with the prefix `administrate-field-`.
+In your Dashboard `ATTRIBUTE_TYPES` use the field type `Field::Enum`. i.e.
+```ruby
+ATTRIBUTE_TYPES = {
+  category: Field::Enum
+}
+```
 
-Here are some examples (these don't correspond to actual gems):
+## Contributing
 
-| Gem Name | Field Name |
-|----------------------------|------------------------------|
-| `administrate-field-enum` | `Administrate::Field::Enum` |
-| `administrate-field-file_upload` | `Administrate::Field::FileUpload` |
-| `administrate-field-geocoding-region` | `Administrate::Field::Geocoding::Region` |
-| `administrate-field-geocoding-geo_json` | `Administrate::Field::Geocoding::GeoJson` |
+Bug reports and pull requests are welcome on GitHub at https://github.com/DisruptiveAngels/administrate-field-enum.
 
-[Rubygems naming guidelines]: http://guides.rubygems.org/name-your-gem/
+## License
 
-[Administrate]: https://github.com/thoughtbot/administrate
+[MIT License](https://github.com/DisruptiveAngels/administrate-field-enum/blob/master/LICENSE.md)
+
