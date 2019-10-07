@@ -8,6 +8,10 @@ module Administrate
         data.humanize unless data.nil?
       end
 
+      def html_options
+        options[:html] || {}
+      end
+
       class Engine < ::Rails::Engine
       end
     end
