@@ -26,5 +26,6 @@ By default, the input is a select field for the enum attributes.
     end,
     f.object.public_send(field.attribute.to_s)
   ),
-  include_blank: false) %>
+  { include_blank: false },
+  field.html_options) %>
 </div>
