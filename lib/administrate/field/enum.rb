@@ -12,6 +12,16 @@ module Administrate
         options[:html] || {}
       end
 
+      def option_filter
+        options[:option_filter] || Proc.new { true }
+      end
+
+      def filtered_options(options)
+        options.select(&option_filter).map do |k, v|
+          [I18n.t("activerecord.attributes.#{resource.class.name.underscore}.#{attribute.to_s.pluralize}.#{k}", default: k.humanize), k]
+        end
+      end
+
       class Engine < ::Rails::Engine
       end
     end
