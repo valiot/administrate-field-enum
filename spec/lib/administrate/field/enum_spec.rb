@@ -32,4 +32,34 @@ describe Administrate::Field::Enum do
       expect(field.html_options[:class]).to be_nil
     end
   end
+
+  describe '#option_filter' do
+    it 'returns a supplied option_filter Proc' do
+      page = :form
+      option_filter = Proc.new { |option| option != 'x' }
+      field = Administrate::Field::Enum.with_options(option_filter: option_filter)
+                                       .new(:status, 'status', page)
+
+      expect(field.option_filter).to eq(option_filter)
+    end
+
+    it 'returns a no-op filter Proc by default' do
+      page = :form
+      field = Administrate::Field::Enum.new(:status, 'status', page)
+
+      expect(field.evaluator.call).to be_truthy
+    end
+  end
+
+  describe '#filtered_options' do
+    it 'returns array of filtered arrays' do
+      page = :form
+      options = ['I', 'Am', 'Groot']
+      option_filter = Proc.new { |option| option != 'Am' }
+      field = Administrate::Field::Enum.with_options(option_filter: option_filter)
+                                       .new(:status, 'status', page)
+
+      expect(field.filtered_options(options)).to eq([['I', 'I'], ['Groot', 'Groot']])
+    end
+  end
 end
