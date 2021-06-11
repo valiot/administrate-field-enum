@@ -21,9 +21,7 @@ By default, the input is a select field for the enum attributes.
   <%= f.select(
   field.attribute,
   options_for_select(
-    f.object.class.public_send(field.attribute.to_s.pluralize).map do |k, v|
-      [I18n.t("activerecord.attributes.#{f.object.class.name.underscore}.#{field.attribute.to_s.pluralize}.#{k}", default: k.humanize), k]
-    end,
+    field.filtered_options(f.object.class.public_send(field.attribute.to_s.pluralize)),
     f.object.public_send(field.attribute.to_s)
   ),
   { include_blank: !f.object.class.validators_on(field.attribute.to_s).map(&:class).include?(ActiveRecord::Validations::PresenceValidator) },
