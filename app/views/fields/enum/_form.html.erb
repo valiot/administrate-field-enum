@@ -26,6 +26,6 @@ By default, the input is a select field for the enum attributes.
     end,
     f.object.public_send(field.attribute.to_s)
   ),
-  { include_blank: !f.object.class.validators_on(field.attribute.to_s).map(&:class).include?(ActiveRecord::Validations::PresenceValidator) },
+  { include_blank: field.include_blank_option || !f.object.class.validators_on(field.attribute.to_s).map(&:class).include?(ActiveRecord::Validations::PresenceValidator) },
   field.html_options) %>
 </div>
