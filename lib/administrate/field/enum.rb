@@ -12,6 +12,10 @@ module Administrate
         options[:html] || {}
       end
 
+      def include_blank_option
+        options.fetch(:include_blank, false)
+      end
+
       class Engine < ::Rails::Engine
       end
     end

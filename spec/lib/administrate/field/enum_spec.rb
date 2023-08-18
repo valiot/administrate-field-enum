@@ -12,6 +12,24 @@ describe Administrate::Field::Enum do
     end
   end
 
+  describe '.include_blank' do
+    it 'is false by default' do
+      page = :show
+
+      field = Administrate::Field::Enum.new(:status, 'status', page)
+
+      expect(field.include_blank_option).to be_falsy
+    end
+
+    it 'can override include_blank_option' do
+      page = :show
+
+      field = Administrate::Field::Enum.with_options(include_blank: true).new(:status, 'status', page)
+
+      expect(field.include_blank_option).to be_truthy
+    end
+  end
+
   describe '#html_options' do
     it 'returns a hash of :html options' do
       page = :show
